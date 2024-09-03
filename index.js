@@ -40,6 +40,7 @@ const toppings = [
   "classic_cherry_purple_orange",
   "piping_glitter_black",
   "retro_piping_flowers",
+  "piping_pink_flowers",
   "hearts_red_white_piping",
   "pink_butterflies",
   "pinkberry_piping",
