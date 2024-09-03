@@ -26,6 +26,19 @@ const flavors = [
 ];
 
 const toppings = [
+  "classic_rose_pink",
+  "farewell_age",
+  "pink_roses",
+  "classic_pink_rose_cream",
+  "pastel_color_piping",
+  "classic_white_piping",
+  "gradient_blue_piping",
+  "christmas_red_green_cream",
+  "christmas_blue_cream",
+  "classic_full_blue_cream",
+  "classic_cherry_purple_orange",
+  "piping_glitter_black",
+  "retro_piping_flowers",
   "hearts_red_white_piping",
   "pink_butterflies",
   "pinkberry_piping",
@@ -121,7 +134,9 @@ const downloadImage = async (url, savePath) => {
       writer.on("error", reject);
     });
   } catch (error) {
-    console.error("Error downloading the image:", error);
+    console.error("Error downloading the image:", error.message);
+    console.error("Image URL:", url);
+    process.exit(1);
   }
 };
 
