@@ -36,6 +36,7 @@ const toppings = [
   "christmas_red_green_cream",
   "christmas_blue_cream",
   "classic_full_blue_cream",
+  "classic_pastel_pink_blue_cream",
   "classic_cherry_purple_orange",
   "piping_glitter_black",
   "retro_piping_flowers",
@@ -56,7 +57,9 @@ const getShapes = () => {
           shape,
           angle + ".png"
         );
-        downloadImage(url, saveLoc);
+        if (!fs.existsSync(saveLoc)) {
+          downloadImage(url, saveLoc);
+        }
       });
     });
   } catch (error) {
@@ -78,7 +81,10 @@ const getFlavors = () => {
             shape,
             shape + "_" + angle + ".png"
           );
-          downloadImage(url, saveLoc);
+
+          if (!fs.existsSync(saveLoc)) {
+            downloadImage(url, saveLoc);
+          }
         });
       });
     });
@@ -101,7 +107,9 @@ const getToppings = () => {
             shape,
             shape + "_" + angle + ".png"
           );
-          downloadImage(url, saveLoc);
+          if (!fs.existsSync(saveLoc)) {
+            downloadImage(url, saveLoc);
+          }
         });
       });
     });
