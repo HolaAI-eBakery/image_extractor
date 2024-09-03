@@ -96,7 +96,7 @@ const getToppings = () => {
           const saveLoc = path.join(
             __dirname,
             "cakes",
-            "topping",
+            "toppings",
             topping,
             shape,
             shape + "_" + angle + ".png"
