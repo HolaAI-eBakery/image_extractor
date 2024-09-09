@@ -94,6 +94,29 @@ const getFlavors = () => {
   }
 };
 
+const getColors = () => {
+  try {
+    shapes.forEach((shape) => {
+      angle.forEach((angle) => {
+        const url = `https://file.lola.do/content/cakes/colors/${shape}_${angle}.png`;
+        const saveLoc = path.join(
+          __dirname,
+          "cakes",
+          "colors",
+          shape,
+          shape + "_" + angle + ".png"
+        );
+
+        if (!fs.existsSync(saveLoc)) {
+          downloadImage(url, saveLoc);
+        }
+      });
+    });
+  } catch (error) {
+    console.error("Error downloading the flavor:", error.message);
+  }
+};
+
 const getToppings = () => {
   try {
     toppings.forEach((topping) => {
@@ -151,4 +174,5 @@ const downloadImage = async (url, savePath) => {
 
 getShapes();
 getFlavors();
+getColors();
 getToppings();
